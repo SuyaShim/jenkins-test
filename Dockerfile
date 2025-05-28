@@ -89,7 +89,7 @@ RUN apt-get update && \
     mkdir -p /app/bin /app/frontend /app/backend /app/data
 
 # 각 스테이지에서 빌드된 결과물 복사
-COPY --from=frontend-build /app/frontend /app/frontend
+COPY --from=frontend-build /app/front /app/frontend
 COPY --from=backend-build /tmp/app /app/bin/app
 COPY --from=data-build /data /app/data
 
